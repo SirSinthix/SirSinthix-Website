@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SirSinthix</title>
+
+    <link rel="stylesheet" href="./Styles/main.css?v=2">
+    <link rel="stylesheet" href="./Styles/code.css?v=1">
+  </head>
+
+  <body>
+    <div id="menuComp"></div>
+    
+    <div class="content">
+      <div class="cmdSec">
+        <h1>Code</h1>
+        <button class="copy" onclick="copy('code')">Copy</button>
+        <div class="cmdText" id="code">$nomention
+$onlyIf[$guildID!=;❌️ Can't use the command in dm!]
+
+$title[👤 User Info 👤]
+$thumbnail[$userAvatar[$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif]]
+$description[
+👤 User
+$if[$mentioned[1]==] <@$authorID> $else <@$mentioned[1]> $endif
+
+🆔️ ID
+$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif
+
+🪪 Nickname
+ $nickname[$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif]
+
+🔖 Display Name
+$if[$displayName[$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif]==] No display name. $else $displayName[$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif] $endif
+
+🥇 Badges
+$if[$userBadges[$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif;, ]==] No badges. $else $userBadges[$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif;, ] $endif
+
+🛠 Admin
+ $isAdmin[$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif]
+
+🤖 Bot
+ $isBot[$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif]
+
+📅 Creation Date
+ $creationDate[$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif]
+
+🗓 Join Date
+ $userJoined[$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif]
+]
+$addTimestamp
+$color[$random[0;999999]]</div>
+      </div>
+    </div>
+    
+    <script src="./Scripts/main.js"></script>
+  </body>
+</html>

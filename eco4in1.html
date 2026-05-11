@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SirSinthix</title>
+
+    <link rel="stylesheet" href="./Styles/main.css?v=2">
+    <link rel="stylesheet" href="./Styles/code.css?v=1">
+  </head>
+
+  <body>
+    <div id="menuComp"></div>
+    
+    <div class="content">
+      <div class="cmdSec">
+        <h1>Variable/s</h1>
+        <div class="cmdText" id="var">1. Name: "cash" Value: "0"
+2. Name: "bank" Value: "0"</div>
+      </div>
+      
+      <div class="cmdSec">
+        <h1>Code</h1>
+        <button class="copy" onclick="copy('code')">Copy</button>
+        <div class="cmdText" id="code">$nomention
+
+$if[$or[$message[1]==bal;$message[1]==bala;$message[1]==balan;$message[1]==balanc;$message[1]==balance]==true]
+$onlyIf[$guildID!=;❌️ Can't use the command in dm!]
+$suppressErrors[❌️ Not a vaild user!]
+
+$title[💵$if[$mentioned[1]==] <@$authorID>'s $else <@$mentioned[1]>'s $endifBalance 💵]
+$thumbnail[$userAvatar[$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif]]
+$description[
+👜 Wallet
+$getVar[cash;$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif] cash
+
+🏦 Bank
+$getVar[bank;$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif] cash
+
+👜➕️🏦 Total
+$calculate[$getVar[cash;$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif]+$getVar[bank;$if[$mentioned[1]==] $authorID $else $mentioned[1] $endif]] cash
+]
+$addTimestamp
+$color[$random[0;999999]]
+$endif
+
+$if[$message[1]==work]
+$globalCooldown[30m;❌️ You need to wait %time% till you can work again!]
+
+$setVar[cash;$sum[$getVar[cash;$authorID];$random[100;150]];$authorID]
+
+$title[📃 Work 📃]
+$thumbnail[$authorAvatar]
+$description[
+👤 User
+<@$authorID>
+
+🤝 Worked
+$randomText[Policeman;Fireflighter;Cashier;DOT;Businessman;Cleaner;Bartender;Cook;Chef;Babysitter;Bank worker;Enginee;Mechanic]
+
+📋 Earned
+$random[100;150] cash
+]
+$addTimestamp
+$color[$random[0;999999]]
+$endif
+
+$if[$or[$message[1]==dep;$message[1]==depo;$message[1]==depos;$message[1]==deposi;$message[1]==deposit]==true]
+$onlyIf[$getVar[cash;$authorID]>0;❌️ You can't deposit when you have 0 cash!]
+$onlyIf[$calculate[$getVar[cash;$authorID]+1]>$message[2];❌️ You can't deposit more than what you have!]
+$onlyIf[$message[2]>-1;❌️ Can't deposit negative knobs!]
+$suppressErrors[❌️ Not a vaild amount!]
+
+$setVar[cash;$sub[$getVar[cash;$authorID];$message[2]];$authorID]
+$setVar[bank;$sum[$getVar[bank;$authorID];$message[2]];$authorID]
+
+$title[📥 Deposit 📥]
+$thumbnail[$authorAvatar]
+$description[
+👤 User
+<@$authorID>
+
+📋 Amount
+$message[2]
+]
+$addTimestamp
+$color[$random[0;999999]]
+$endif
+
+$if[$or[$message[1]==with;$message[1]==withd;$message[1]==withdr;$message[1]==withdra;$message[1]==withdraw]==true]
+$onlyIf[$getVar[bank;$authorID]>0;❌️ You can't withdraw when you have 0 knobs!]
+$onlyIf[$calculate[$getVar[bank;$authorID]+1]>$message[2];❌️ You can't withdraw more than what you have!]
+$onlyIf[$message[2]>-1;❌️ Can't withdraw negative knobs!]
+$suppressErrors[❌️ Not a vaild amount!]
+
+$setVar[cash;$sum[$getVar[cash;$authorID];$message[2]];$authorID]
+$setVar[bank;$sub[$getVar[bank;$authorID];$message[2]];$authorID]
+
+$title[📤 Withdraw 📤]
+$thumbnail[$authorAvatar]
+$description[
+👤 User
+<@$authorID>
+
+📋 Amount
+$message[2] cash
+]
+$addTimestamp
+$color[$random[0;999999]]
+$endif</div>
+      </div>
+    </div>
+    
+    <script src="./Scripts/main.js"></script>
+  </body>
+</html>

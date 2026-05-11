@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SirSinthix</title>
+
+    <link rel="stylesheet" href="./Styles/main.css?v=2">
+    <link rel="stylesheet" href="./Styles/code.css?v=1">
+  </head>
+
+  <body>
+    <div id="menuComp"></div>
+    
+    <div class="content">
+      <div class="cmdSec">
+        <h1>Variable/s</h1>
+        <div class="cmdText" id="var">1. Name: "cash" Value: "0"
+2. Name: "bank" Value: "0"</div>
+      </div>
+      
+      <div class="cmdSec">
+        <h1>Code</h1>
+        <button class="copy" onclick="copy('code')">Copy</button>
+        <div class="cmdText" id="code">$nomention
+$onlyIf[$guildID!=;❌️ Can't use the command in dm!]
+
+$title[🏠 Home 🏠]
+$thumbnail[$authorAvatar]
+$description[Choose which leaderboard you want to see below.]
+$addTimestamp
+$color[$random[0;999999]]
+$addButton[yes;cash-$authorID;Wallet Leaderboard;danger;no;👜;]
+$addButton[yes;bank-$authorID;Bank Leaderboard;success;no;🏦;]</div>
+      </div>
+      
+      <div class="cmdSec">
+        <h1>$onInteraction</h1>
+        <button class="copy" onclick="copy('code')">Copy</button>
+        <div class="cmdText" id="code">$nomention
+$if[$customID==cash-$authorID]
+$title[👜 Wallet Leaderboard 👜]
+$thumbnail[$authorAvatar]
+$globalUserLeaderboard[cash;asc]
+$addTimestamp
+$color[$random[0;999999]]
+$endif
+
+$if[$customID==bank-$authorID]
+$title[🏦 Bank Leaderboard 🏦]
+$thumbnail[$authorAvatar]
+$globalUserLeaderboard[bank;asc]
+$addTimestamp
+$color[$random[0;999999]]
+$endif</div>
+      </div>
+    </div>
+    
+    <script src="./Scripts/main.js"></script>
+  </body>
+</html>

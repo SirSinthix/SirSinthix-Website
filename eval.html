@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SirSinthix</title>
+
+    <link rel="stylesheet" href="./Styles/main.css?v=2">
+    <link rel="stylesheet" href="./Styles/code.css?v=1">
+  </head>
+
+  <body>
+    <div id="menuComp"></div>
+    
+    <div class="content">
+      <div class="cmdSec">
+        <h1>Code</h1>
+        <button class="copy" onclick="copy('code')">Copy</button>
+        <div class="cmdText" id="code">$nomention
+$var[code;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$unescape[$message];+;$;-1];( ;\[;-1]; );\];-1]; / ;\;;-1];$rickroll;https://youtu.be/dQw4w9WgXcQ;-1];+rickroll;https://youtu.be/dQw4w9WgXcQ;-1]]
+
+$if[$message==]
+  $addCmdReactions[❗]
+$else
+  $if[$authorID==$botOwnerID]
+    $try
+**💻 Code**
+$var[code]
+
+**📋 Raw**
+$message
+
+$if[$checkContains[$message;deletecommand;clearReactions;deleteChannels;deleteMessage]==false]**🟢 Execution** $else**🟡 Execution** $endif
+$eval[$var[code]]
+      
+      $if[$checkContains[$message;deletecommand;clearReactions;deleteChannels;deleteMessage]==true] $else $addCmdReactions[✅] $endif
+    $catch
+**💻 Code**
+$var[code]
+
+**📋 Raw**
+$message
+
+**🔴 Execution**
+Function $error[command] at $error[row]:$error[column] returned an error: $error[message]
+      
+      $if[$checkContains[$message;deletecommand;clearReactions;deleteChannels;deleteMessage]==true] $else $clearReactions[$channelID;$lastMessageID;✅] $endif
+      
+      $if[$checkContains[$message;deletecommand;clearReactions;deleteChannels;deleteMessage]==true] $else $addCmdReactions[❗] $endif
+    $endtry
+  $else
+    $addCmdReactions[❌]
+  $endif
+$endif</div>
+      </div>
+    </div>
+    
+    <script src="./Scripts/main.js"></script>
+  </body>
+</html>

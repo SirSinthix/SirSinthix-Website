@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SirSinthix</title>
+
+    <link rel="stylesheet" href="./Styles/main.css?v=2">
+    <link rel="stylesheet" href="./Styles/code.css?v=1">
+  </head>
+
+  <body>
+    <div id="menuComp"></div>
+    
+    <div class="content">
+      <div class="cmdSec">
+        <h1>Code</h1>
+        <button class="copy" onclick="copy('code')">Copy</button>
+        <div class="cmdText" id="code">$nomention
+$onlyIf[$guildID!=;❌️ Can't use the command in dm!]
+$var[msg;$message]
+$var[clr;$random[0;999999]]
+$httpGet[https://api.kastg.xyz/api/ai/llamaV3?prompt=$url[encode;$var[msg]]]
+$botTyping
+$if[$var[msg]==]
+$replyIn[4s]
+$title[🌐 Chatbot 🌐]
+$thumbnail[$userAvatar[$botID]]
+$description[Sorry! Can you repeat what you wanted to say to me? I'm all ears (Or rather, any text input!)]
+$addTimestamp
+$color[$var[clr]]
+$else
+$httpGet[https://api.kastg.xyz/api/ai/llamaV3?prompt=$url[encode;$var[msg]]]
+$title[🌐 Chatbot 🌐]
+$thumbnail[$userAvatar[$botID]]
+$description[$httpResult[result;0;response]]
+$addTimestamp
+$color[$var[clr]]
+$endif</div>
+      </div>
+    </div>
+    
+    <script src="./Scripts/main.js"></script>
+  </body>
+</html>
